@@ -7,7 +7,7 @@
                 <span class='icon-bar'></span>
                 <span class='icon-bar'></span>
             </button>
-            <a class='navbar-brand' [routerLink]='["/"]'>EvaluationPerformanceFormsAspCore.Web</a>
+            <a class='navbar-brand' [routerLink]='["/"]'>Evaluation Performance Forms</a>
         </div>
         <div class='clearfix'></div>
         <div class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
@@ -27,6 +27,11 @@
                         <span class='glyphicon glyphicon-th-list'></span> Fetch data
                     </a>
                 </li>
+                <li [routerLinkActive]='["link-active"]'>
+                      <a [routerLink]='["/executive-view"]' (click)='collapse()'>
+                          <span class='glyphicon glyphicon-file'></span> Executive Form
+                      </a>
+                  </li>
             </ul>
         </div>
     </div>
