@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EvaluationPerformanceFormsA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPerformanceFormsAspCore.Infrastructure", "EvaluationPerformanceFormsAspCore.Infrastructure\EvaluationPerformanceFormsAspCore.Infrastructure.csproj", "{0FE126FB-8DF2-4276-AC48-D6405EFA15BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvaluationPerformanceFormsAspCore.Domain", "EvaluationPerformanceFormsAspCore.Domain\EvaluationPerformanceFormsAspCore.Domain.csproj", "{B157974B-7B63-4474-A032-954B5E4D5E56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0FE126FB-8DF2-4276-AC48-D6405EFA15BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FE126FB-8DF2-4276-AC48-D6405EFA15BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FE126FB-8DF2-4276-AC48-D6405EFA15BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B157974B-7B63-4474-A032-954B5E4D5E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B157974B-7B63-4474-A032-954B5E4D5E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B157974B-7B63-4474-A032-954B5E4D5E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B157974B-7B63-4474-A032-954B5E4D5E56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
