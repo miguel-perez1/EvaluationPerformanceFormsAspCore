@@ -5,6 +5,6 @@ namespace Infrastructure.Data.Repositories
 {
     public interface IUserRepository
     {
-        //Task<User> GetFirstUser();
+        Task<User> GetFirstUser();
     }
 }

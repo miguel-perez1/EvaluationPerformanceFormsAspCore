@@ -5,22 +5,22 @@ using Infrastructure.Data.Sql;
 
 namespace Infrastructure.Data.Repositories
 {
-    //public class UserRepository : SqlRepository<User>, IUserRepository
-    //{
-    //    public UserRepository(ISqlConnectionFactory connectionFactory) : base(connectionFactory)
-    //    { }
+    public class UserRepository : SqlRepository<User>, IUserRepository
+    {
+        public UserRepository(ISqlConnectionFactory connectionFactory) : base(connectionFactory)
+        { }
 
-    //    public Task<User> GetFirstUser()
-    //    {
-    //        var sqlQuery = $@"Select * from User";
-    //        try
-    //        {
-    //            var result = FindAsync(sqlQuery, null);
-    //            return result;
-    //        } catch (Exception e)
-    //        {
-    //            throw;
-    //        }
-    //    }
-    //}
+        public Task<User> GetFirstUser()
+        {
+            var sqlQuery = $@"SELECT * FROM User";
+            try
+            {
+                var result = FindAsync(sqlQuery, null);
+                return result;
+            } catch (Exception e)
+            {
+                throw;
+            }
+        }
+    }
 }

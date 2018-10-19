@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Infrastructure.Data.Models;
+using Infrastructure.Data.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EvaluationPerformanceFormsAspCore.Web.Controllers
@@ -9,36 +11,25 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        private static string[] Summaries = new[]
+        private readonly IUserRepository _userFirst;
+
+        public SampleDataController(IUserRepository userFirst)
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+            _userFirst = userFirst;
+        }
 
         [HttpGet("[action]")]
-        public IEnumerable<WeatherForecast> WeatherForecasts()
+        public async Task<ActionResult<User>> FirstUser()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                DateFormatted = DateTime.Now.AddDays(index).ToString("d"),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            });
+            return await _userFirst.GetFirstUser();
         }
 
-        public class WeatherForecast
-        {
-            public string DateFormatted { get; set; }
-            public int TemperatureC { get; set; }
-            public string Summary { get; set; }
-
-            public int TemperatureF
-            {
-                get
-                {
-                    return 32 + (int)(TemperatureC / 0.5556);
-                }
-            }
-        }
+        //public class User
+        //{
+        //    public string name { get; set; }
+        //    public string title { get; set; }
+        //    public int sap { get; set; }
+        //    public string division { get; set; }
+        //}
     }
 }
