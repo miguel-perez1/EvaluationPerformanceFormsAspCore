@@ -10,7 +10,7 @@ namespace Infrastructure.Data.Sql
 
         public MySqlConnectionFactory()
         {
-            _connectionString = "server=easel1.fulgentcorp.com;port=3306;database=gramjam;uid=gramjamuser;pwd=z9u@8Yd!uTSVB4Qb6#m;SslMode=none";
+            _connectionString = "server=easel1.fulgentcorp.com;port=3306;database=gramjam;uid=gramjamuser;pwd=z9u@8Yd!uTSVB4Qb6#m;SslMode=none;";
         }
 
         public IDbConnection Connection

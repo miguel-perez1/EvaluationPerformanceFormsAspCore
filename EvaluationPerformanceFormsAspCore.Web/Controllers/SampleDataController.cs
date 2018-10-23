@@ -23,6 +23,11 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
         {
             return await _userFirst.GetFirstUser();
         }
+        [HttpGet("[action]")]
+        public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
+        {
+            return await _userFirst.GetUsers();
+        }
 
         //public class User
         //{
