@@ -14,11 +14,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>{{ user.name }}</td>
-      <td>{{ user.title }}</td>
-      <td>{{ user.sap }}</td>
-      <td>{{ user.division }}</td>
+    <tr *ngFor="let use of user">
+      <td>{{ use.name }}</td>
+      <td>{{ use.title }}</td>
+      <td>{{ use.sap }}</td>
+      <td>{{ use.division }}</td>
     </tr>
   </tbody>
 </table>

@@ -9,7 +9,7 @@ export class FetchDataComponent {
   public user: User;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
-    http.get<User>(baseUrl + 'api/SampleData/FirstUser').subscribe(result => {
+    http.get<User>(baseUrl + 'api/SampleData/GetUsers').subscribe(result => {
       this.user = result;
     }, error => console.error(error));
   }

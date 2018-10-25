@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Infrastructure.Data.Models;
-using Infrastructure.Data.Repositories;
+using EvaluationPerformanceFormsAspCore.Web.Models;
+using EvaluationPerformanceFormsAspCore.Web.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EvaluationPerformanceFormsAspCore.Web.Controllers
@@ -17,17 +17,22 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
         {
             _userFirst = userFirst;
         }
-
-        [HttpGet("[action]")]
-        public async Task<ActionResult<User>> FirstUser()
+        [HttpGet]
+        public async Task<ActionResult<List<User>>> GetUsers(DateTime dateOfBirth)
         {
-            return await _userFirst.GetFirstUser();
+            var response = await _userFirst.AllUsers();
+            return Json(response);
         }
-        [HttpGet("[action]")]
-        public async Task<ActionResult<IEnumerable<User>>> GetAllUsers()
-        {
-            return await _userFirst.GetUsers();
-        }
+        //[HttpGet("[action]")]
+        //public async Task<ActionResult<User>> FirstUser()
+        //{
+        //    return await _userFirst.GetFirstUser();
+        //}
+        //[HttpGet]
+        //public async Task<IEnumerable<User>> GetAllUsers()
+        //{
+        //    return await _userFirst.GetUsers();
+        //}
 
         //public class User
         //{
