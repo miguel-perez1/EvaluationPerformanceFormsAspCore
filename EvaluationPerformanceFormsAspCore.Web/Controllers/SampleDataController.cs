@@ -17,8 +17,8 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
         {
             _userFirst = userFirst;
         }
-        [HttpGet]
-        public async Task<ActionResult<List<User>>> GetUsers(DateTime dateOfBirth)
+        [HttpGet("[action]")]
+        public async Task<ActionResult<List<User>>> GetUsers()
         {
             var response = await _userFirst.AllUsers();
             return Json(response);
