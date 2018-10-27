@@ -2,10 +2,10 @@ import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-fetch-data',
-  templateUrl: './fetch-data.component.html'
+  selector: 'user-list',
+  templateUrl: './user-list.component.html'
 })
-export class FetchDataComponent {
+export class UserListComponent {
   public user: User;
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

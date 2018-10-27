@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
 import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
+import { UserListComponent } from './user-list/user-list.component';
 import { ExecutiveFormComponent } from './executive-form/executive-form.component';
+import { MaterialsModule } from './materials.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -17,17 +19,19 @@ import { ExecutiveFormComponent } from './executive-form/executive-form.componen
     NavMenuComponent,
     HomeComponent,
     CounterComponent,
-    FetchDataComponent,
+    UserListComponent,
     ExecutiveFormComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    MaterialsModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
+      { path: 'user-list', component: UserListComponent },
       { path: 'executive-view', component: ExecutiveFormComponent },
     ])
   ],
