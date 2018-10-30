@@ -9,5 +9,6 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
     public interface IUserRepository
     {
         Task<List<User>> AllUsers();
+        Task AddUser(User user);
     }
 }

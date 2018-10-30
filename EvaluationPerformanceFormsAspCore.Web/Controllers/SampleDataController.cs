@@ -23,6 +23,12 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
             var response = await _userFirst.AllUsers();
             return Json(response);
         }
+
+        [HttpPost("[action]")]
+        public async Task AddNewUser(User user)
+        {
+            await _userFirst.AddUser(user);
+        }
         //[HttpGet("[action]")]
         //public async Task<ActionResult<User>> FirstUser()
         //{

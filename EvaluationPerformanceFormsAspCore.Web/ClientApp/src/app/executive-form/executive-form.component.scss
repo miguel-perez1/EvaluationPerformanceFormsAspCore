@@ -1,0 +1,25 @@
+mat-form-field{
+  width: 100%;
+  padding: 0px 20px 0px 20px;
+}
+.form-container{
+  padding-top: 25px;
+}
+.container {
+  background-color: #caffff;
+  padding: 20px 20px 15px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+}
+.example-radio-group {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

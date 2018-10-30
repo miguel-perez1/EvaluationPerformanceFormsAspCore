@@ -25,6 +25,19 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
                 return new MySqlConnection(_config.GetConnectionString("MyConnectionString"));
             }
         }
+
+        public async Task AddUser(User user)
+        {
+            using (IDbConnection conn = Connection)
+            {
+                string sQuery = "INSERT INTO User (name, title, sap, division)"
+                                + " VALUES(@name, @title, @sap, @division";
+                conn.Open();
+                await conn.ExecuteAsync(sQuery, user);
+                
+            }
+        }
+
         public async Task<List<User>> AllUsers()
         {
             using (IDbConnection conn = Connection)

@@ -12,7 +12,8 @@ import { UserListComponent } from './user-list/user-list.component';
 import { ExecutiveFormComponent } from './executive-form/executive-form.component';
 import { MaterialsModule } from './materials.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ExecutiveFormService } from './services/executive-form.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     MaterialsModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'counter', component: CounterComponent },
@@ -35,7 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: 'executive-view', component: ExecutiveFormComponent },
     ])
   ],
-  providers: [],
+  providers: [ExecutiveFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
