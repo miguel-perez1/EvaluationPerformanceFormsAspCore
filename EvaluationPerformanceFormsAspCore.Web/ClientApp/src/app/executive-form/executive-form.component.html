@@ -26,7 +26,9 @@
           <input type="text" matInput placeholder="Employee SAP #" formControlName="sap">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Reporting Period">
+          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Division">
@@ -95,44 +97,44 @@
               <!--PERCENTAGE-->
               <td colspan="2">
                 <div class="form-group row">
-                  <div class="col-50">
+                  <!--<div class="col-50">
                     <label class="control-label">
                       Item Evaluation Weight Percentage (total of all weights=100%):
                     </label>
-                  </div>
-                  <div class="col-50">
-                    <input class="input-sm" />
-                  </div>
-                  <span class="help-block">
+                  </div>-->
+                  <mat-form-field>
+                    <input matInput placeholder="Item Evaluation Weight Percentage (total of all weights=100%)">
+                  </mat-form-field>
+                  <!--<span class="help-block">
                     <span>
                       Please enter your full name.
                     </span>
                     <span>
                       Name must be longer than 3 characters.
                     </span>
-                  </span>
+                  </span>-->
 
                 </div>
               </td>
               <!--RATING-->
               <td>
                 <div class="form-group row">
-                  <div class="col-50">
+                  <!--<div class="col-50">
                     <label class="control-label">
                       Rating:
                     </label>
-                  </div>
-                  <div class="col-50">
-                    <input class="input-sm"/>
-                  </div>
-                  <span class="help-block">
+                  </div>-->
+                  <mat-form-field>
+                    <input matInput placeholder="Rating">
+                  </mat-form-field>
+                  <!--<span class="help-block">
                     <span >
                       Please enter your full name.
                     </span>
                     <span>
                       Name must be longer than 3 characters.
                     </span>
-                  </span>
+                  </span>-->
 
                 </div>
               </td>
@@ -148,19 +150,12 @@
             <tr>
               <td colspan="5">
                 <div class="form-group">
-                  <label class="control-label">
+                  <!--<label class="control-label">
                     Responibility/Goal:
-                  </label>
-                  <textarea class="form-control"></textarea>
-                  <span class="help-block">
-                    <span>
-                      Please enter your full name.
-                    </span>
-                    <span>
-                      Name must be longer than 3 characters.
-                    </span>
-                  </span>
-
+                  </label>-->
+                  <mat-form-field>
+                    <textarea matInput placeholder=" Responibility/Goal: "></textarea>
+                  </mat-form-field>
                 </div>
               </td>
             </tr>
@@ -168,19 +163,12 @@
             <tr>
               <td colspan="5">
                 <div class="form-group">
-                  <label class="control-label">
+                  <!--<label class="control-label">
                     Summary of actual performance results:
-                  </label>
-                  <textarea class="form-control"></textarea>
-                  <span class="help-block">
-                    <span>
-                      Please enter your full name.
-                    </span>
-                    <span>
-                      Name must be longer than 3 characters.
-                    </span>
-                  </span>
-
+                  </label>-->
+                  <mat-form-field >
+                    <textarea matInput placeholder=" Summary of actual performance results: "></textarea>
+                  </mat-form-field>
                 </div>
               </td>
             </tr>
@@ -211,8 +199,9 @@
             contribution.
           </td>
           <td>
-            <input class="form-control"
-                   type="text" />
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -224,8 +213,9 @@
             accountable at all levels. We avoid the appearance of impropriety.
           </td>
           <td>
-            <input class="form-control"
-                   type="text" />
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -237,8 +227,9 @@
             We continually re-imagine operational processes for better results.
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -254,8 +245,9 @@
             and the community.
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
@@ -282,9 +274,9 @@
             Ensures team members have opportunities to develop their skills
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
-          </td>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
         </tr>
         <tr>
           <td>Strategic Thinking</td>
@@ -294,8 +286,9 @@
             customer base
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -307,8 +300,9 @@
             and meet targeted budget goals
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -319,8 +313,9 @@
             Empowers team to solve problems and make decisions
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
         <tr>
@@ -329,8 +324,9 @@
             Employee follow-through on the Professional Development Plan outlined in Section V
           </td>
           <td>
-            <input class="form-control"
-                   type="text"/>
+            <mat-form-field class="rating">
+              <input matInput>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
@@ -338,8 +334,8 @@
 
     <!--SECTION 5-->
     <h4 style="font-weight: bold">Section V: Professional Development Plan</h4>
-    <div formArrayName="section5" *ngFor="let section of section5.controls; let i=index">
-      <div [formGroupName]="i">
+    <div>
+      <div>
         <table class="table table-bordered">
           <thead>
             <tr>
@@ -363,12 +359,15 @@
               <!--TIME FRAME-->
               <td colspan="2">
                 <div class="form-group row">
-                  <div class="col-50">
+                  <!--<div class="col-50">
                     <label class="control-label">
                       Time Frame or Target Completion Date:
                     </label>
-                  </div>
-                  <div class="col-50">
+                  </div>-->
+                  <mat-form-field>
+                    <input matInput placeholder="Time Frame or Target Completion Date">
+                  </mat-form-field>
+                  <!--<div class="col-50">
                     <input class="input-lg"
                            type="text"/>
                   </div>
@@ -379,7 +378,7 @@
                     <span>
                       Name must be longer than 3 characters.
                     </span>
-                  </span>
+                  </span>-->
 
                 </div>
               </td>
@@ -395,7 +394,10 @@
             <tr>
               <td colspan="5">
                 <div class="form-group">
-                  <textarea class="form-control"
+                  <mat-form-field>
+                    <textarea matInput placeholder="Description"></textarea>
+                  </mat-form-field>
+                  <!--<textarea class="form-control"
                             type="text"></textarea>
                   <span class="help-block">
                     <span>
@@ -404,8 +406,7 @@
                     <span>
                       Name must be longer than 3 characters.
                     </span>
-                  </span>
-
+                  </span>-->
                 </div>
               </td>
             </tr>
@@ -431,8 +432,11 @@
         </tr>
         <tr>
           <td>
-            <textarea class="form-control"
-                      type="text"></textarea>
+            <!--<textarea class="form-control"
+            type="text"></textarea>-->
+            <mat-form-field>
+              <textarea matInput placeholder="Comment"></textarea>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
@@ -450,8 +454,11 @@
       <tbody>
         <tr>
           <td>
-            <textarea class="form-control"
-                      type="text"></textarea>
+            <!--<textarea class="form-control"
+            type="text"></textarea>-->
+            <mat-form-field>
+              <textarea matInput placeholder="Comment"></textarea>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
@@ -467,8 +474,11 @@
       <tbody>
         <tr>
           <td>
-            <textarea class="form-control"
-                      type="text"></textarea>
+            <!--<textarea class="form-control"
+            type="text"></textarea>-->
+            <mat-form-field>
+              <textarea matInput placeholder="Comment"></textarea>
+            </mat-form-field>
           </td>
         </tr>
       </tbody>
@@ -480,13 +490,12 @@
                 type="submit">
           Save
         </button>
-        <button class="btn btn-default"
+        <button class="btn btn-danger"
                 type="button">
-          Test Data
+          Delete
         </button>
       </div>
     </div>
-    <button type="submit">Submit</button>
   </form>
 </div>
 
