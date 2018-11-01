@@ -29,8 +29,13 @@
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/counter"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-file'></span> Test Form
+              <a [routerLink]='["/login"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-user'></span> Login
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/signup"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-user'></span> Signup Test
               </a>
             </li>
           </ul>

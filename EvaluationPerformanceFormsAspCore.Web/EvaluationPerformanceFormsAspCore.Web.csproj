@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\interfaces\executive-form.ts" />
+    <None Remove="ClientApp\src\app\interfaces\user.ts" />
     <None Remove="ClientApp\src\app\models\catcher.ts" />
     <None Remove="ClientApp\src\app\models\user.ts" />
   </ItemGroup>
@@ -36,6 +37,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\interfaces\executive-form.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\interfaces\user.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\catcher.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\user.ts" />
   </ItemGroup>
