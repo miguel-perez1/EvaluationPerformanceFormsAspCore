@@ -26,15 +26,15 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
             }
         }
 
-        public async Task AddUser(User user)
+        public async Task<int> AddUser(User user)
         {
             using (IDbConnection conn = Connection)
             {
-                string sQuery = "INSERT INTO User (name, title, sap, division)"
-                                + " VALUES(@name, @title, @sap, @division";
+                string sQuery = "INSERT INTO User(name, title, sap, division) VALUES(@name, @title, @sap, @division)";
                 conn.Open();
-                await conn.ExecuteAsync(sQuery, user);
-                
+                var result = await conn.ExecuteAsync(sQuery, user);
+                conn.Close();
+                return result;
             }
         }
 
@@ -45,6 +45,7 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
                 string sQuery = "SELECT * FROM User";
                 conn.Open();
                 var result = await conn.QueryAsync<User>(sQuery, null);
+                conn.Close();
                 return result.ToList();
             }
         }

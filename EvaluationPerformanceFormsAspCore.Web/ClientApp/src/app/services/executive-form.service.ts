@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Http, Response, Headers, RequestOptions } from '@angular/http';
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Response, Headers, RequestOptions } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
@@ -9,23 +10,18 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/of';
 
 import { IExecutiveForm } from '../interfaces/executive-form';
+import { Catcher } from '../models/catcher';
 
 @Injectable()
 export class ExecutiveFormService {
-  private baseUrl = 'api/executive';
+  private addNewUserApi: string = 'http://localhost:53473/api/SampleData/AddNewUser';
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
 
   }
-  //saveExecutiveForm(executive: IExecutiveForm): Observable<IExecutiveForm> {
-  //  let headers = new Headers({ 'Content-Type': 'application/json' });
-  //  let options = new RequestOptions({ headers: headers });
-
-  //  if (executive.id === 0) {
-  //    return this.createExecutiveForm(executive, options);
-  //  }
-  //  return this.updateExecutiveForm(executive, options);
-  //}
+  saveExecutiveForm(executive: IExecutiveForm): Observable<IExecutiveForm> {
+    return this.http.post<IExecutiveForm>(this.addNewUserApi, executive);
+  }
   //private createExecutiveForm(executive: IExecutiveForm, options: RequestOptions): Observable<IExecutiveForm> {
   //  executive.id = undefined;
   //  return this.http.post(this.baseUrl, executive, options)
