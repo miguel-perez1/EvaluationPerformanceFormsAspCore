@@ -14,13 +14,13 @@ import { Catcher } from '../models/catcher';
 
 @Injectable()
 export class ExecutiveFormService {
-  private addNewUserApi: string = 'http://localhost:53473/api/SampleData/AddNewUser';
+  private addNewExecutiveFormApi: string = 'http://localhost:53473/api/ExecutiveForm/SaveNewExecutiveForm';
 
   constructor(private http: HttpClient) {
 
   }
   saveExecutiveForm(executive: IExecutiveForm): Observable<IExecutiveForm> {
-    return this.http.post<IExecutiveForm>(this.addNewUserApi, executive);
+    return this.http.post<IExecutiveForm>(this.addNewExecutiveFormApi, executive);
   }
   //private createExecutiveForm(executive: IExecutiveForm, options: RequestOptions): Observable<IExecutiveForm> {
   //  executive.id = undefined;

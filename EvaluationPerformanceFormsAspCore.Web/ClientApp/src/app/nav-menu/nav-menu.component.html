@@ -29,6 +29,11 @@
               </a>
             </li>
             <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/step-view"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-file'></span> Step Pay Plan Form
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/login"]' (click)='collapse()'>
                 <span class='glyphicon glyphicon-user'></span> Login
               </a>

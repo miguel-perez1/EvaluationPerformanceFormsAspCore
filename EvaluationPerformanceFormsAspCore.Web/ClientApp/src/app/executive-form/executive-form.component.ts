@@ -16,18 +16,38 @@ import { Subscription } from 'rxjs/Subscription';
 /** executive-form component*/
 export class ExecutiveFormComponent {
   /** executive-form ctor */
-  constructor(
-    private ExecutiveFormService: ExecutiveFormService) {
+  constructor(private ExecutiveFormService: ExecutiveFormService) {
 
   }
 
   errorMessage: string;
-  user: IExecutiveForm;
-  userForm = new FormGroup({
+  executive: IExecutiveForm;
+  executiveForm = new FormGroup({
     name: new FormControl(''),
     title: new FormControl(''),
+    department: new FormControl(''),
+    reviewType: new FormControl(''),
     sap: new FormControl(''),
+    period: new FormControl(''),
     division: new FormControl(''),
+    secTwoPercent: new FormControl(''),
+    secTwoRating: new FormControl(''),
+    secTwoResponsibility: new FormControl(''),
+    secTwoSummary: new FormControl(''),
+    teamworkRating: new FormControl(''),
+    integRating: new FormControl(''),
+    innovaRating: new FormControl(''),
+    profRating: new FormControl(''),
+    ladRating: new FormControl(''),
+    stratRating: new FormControl(''),
+    excellenceRating: new FormControl(''),
+    decisionRating: new FormControl(''),
+    pdpRating: new FormControl(''),
+    secFiveTime: new FormControl(''),
+    secFiveSummary: new FormControl(''),
+    secSixSummary: new FormControl(''),
+    revComments: new FormControl(''),
+    employeeComments: new FormControl(''),
   });
 
   //onSubmit() {
@@ -36,7 +56,7 @@ export class ExecutiveFormComponent {
   //}
   onSubmit() {
     // Copy the form values over the basic object values
-    let p = Object.assign({}, this.user, this.userForm.value);
+    let p = Object.assign({}, this.executive, this.executiveForm.value);
 
     this.ExecutiveFormService.saveExecutiveForm(p).subscribe(
       () => this.onSaveComplete(),
@@ -46,6 +66,6 @@ export class ExecutiveFormComponent {
 
   onSaveComplete(): void {
     // Reset the form to clear the flags
-    this.userForm.reset();
+    this.executiveForm.reset();
   }
 }

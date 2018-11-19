@@ -5,6 +5,7 @@ import { SignUpService } from '../services/sign-up.service';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
+import { IUser } from '../interfaces/user';
 @Component({
     selector: 'app-sign-up',
     templateUrl: './sign-up.component.html',
@@ -17,7 +18,7 @@ export class SignUpComponent {
 
   }
   errorMessage: string;
-  user: IExecutiveForm;
+  user: IUser;
   userForm = new FormGroup({
     name: new FormControl(''),
     title: new FormControl(''),

@@ -1,5 +1,5 @@
 <div class="form-container">
-  <form class="container mat-elevation-z8" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <form class="container mat-elevation-z8" [formGroup]="executiveForm" (ngSubmit)="onSubmit()">
     <h1 class="text-center">City of San Antonio</h1>
     <h2 class="text-center">Employee Performance Evaluation</h2>
     <h3 class="text-center pbot">Executive Level</h3>
@@ -12,12 +12,12 @@
           <input matInput placeholder="Title" formControlName="title">
         </mat-form-field>
         <mat-form-field>
-          <input matInput placeholder="Department">
+          <input matInput placeholder="Department" formControlName="department">
         </mat-form-field>
         <mat-form-field>
-          <mat-select placeholder="Review Type">
-            <mat-option value="option">Planning</mat-option>
-            <mat-option value="option">Annual</mat-option>
+          <mat-select placeholder="Review Type" formControlName="reviewType">
+            <mat-option value="Planning">Planning</mat-option>
+            <mat-option value="Annual">Annual</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -26,9 +26,10 @@
           <input type="text" matInput placeholder="Employee SAP #" formControlName="sap">
         </mat-form-field>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+          <input matInput placeholder="period" formControlName="period">
+          <!--<input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="period">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
+          <mat-datepicker #picker></mat-datepicker>-->
         </mat-form-field>
         <mat-form-field>
           <input matInput placeholder="Division" formControlName="division">
@@ -103,7 +104,7 @@
                     </label>
                   </div>-->
                   <mat-form-field>
-                    <input matInput placeholder="Item Evaluation Weight Percentage (total of all weights=100%)">
+                    <input matInput placeholder="Item Evaluation Weight Percentage (total of all weights=100%)" formControlName="secTwoPercent">
                   </mat-form-field>
                   <!--<span class="help-block">
                     <span>
@@ -125,7 +126,7 @@
                     </label>
                   </div>-->
                   <mat-form-field>
-                    <input matInput placeholder="Rating">
+                    <input matInput placeholder="Rating" formControlName="secTwoRating">
                   </mat-form-field>
                   <!--<span class="help-block">
                     <span >
@@ -154,7 +155,7 @@
                     Responibility/Goal:
                   </label>-->
                   <mat-form-field>
-                    <textarea matInput placeholder=" Responibility/Goal: "></textarea>
+                    <textarea matInput placeholder=" Responibility/Goal: " formControlName="secTwoResponsibility"></textarea>
                   </mat-form-field>
                 </div>
               </td>
@@ -167,7 +168,7 @@
                     Summary of actual performance results:
                   </label>-->
                   <mat-form-field >
-                    <textarea matInput placeholder=" Summary of actual performance results: "></textarea>
+                    <textarea matInput placeholder=" Summary of actual performance results: " formControlName="secTwoSummary"></textarea>
                   </mat-form-field>
                 </div>
               </td>
@@ -200,7 +201,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="teamworkRating">
             </mat-form-field>
           </td>
         </tr>
@@ -214,7 +215,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="integRating">
             </mat-form-field>
           </td>
         </tr>
@@ -228,7 +229,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="innovaRating">
             </mat-form-field>
           </td>
         </tr>
@@ -246,7 +247,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="profRating">
             </mat-form-field>
           </td>
         </tr>
@@ -275,7 +276,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="ladRating">
             </mat-form-field>
         </tr>
         <tr>
@@ -287,7 +288,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="stratRating">
             </mat-form-field>
           </td>
         </tr>
@@ -301,7 +302,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="excellenceRating">
             </mat-form-field>
           </td>
         </tr>
@@ -314,7 +315,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="decisionRating">
             </mat-form-field>
           </td>
         </tr>
@@ -325,7 +326,7 @@
           </td>
           <td>
             <mat-form-field class="rating">
-              <input matInput>
+              <input matInput formControlName="pdpRating">
             </mat-form-field>
           </td>
         </tr>
@@ -365,7 +366,7 @@
                     </label>
                   </div>-->
                   <mat-form-field>
-                    <input matInput placeholder="Time Frame or Target Completion Date">
+                    <input matInput placeholder="Time Frame or Target Completion Date" formControlName="secFiveTime">
                   </mat-form-field>
                   <!--<div class="col-50">
                     <input class="input-lg"
@@ -395,7 +396,7 @@
               <td colspan="5">
                 <div class="form-group">
                   <mat-form-field>
-                    <textarea matInput placeholder="Description"></textarea>
+                    <textarea matInput placeholder="Description" formControlName="secFiveSummary"></textarea>
                   </mat-form-field>
                   <!--<textarea class="form-control"
                             type="text"></textarea>
@@ -435,7 +436,7 @@
             <!--<textarea class="form-control"
             type="text"></textarea>-->
             <mat-form-field>
-              <textarea matInput placeholder="Comment"></textarea>
+              <textarea matInput placeholder="Comment" formControlName="secSixSummary"></textarea>
             </mat-form-field>
           </td>
         </tr>
@@ -457,7 +458,7 @@
             <!--<textarea class="form-control"
             type="text"></textarea>-->
             <mat-form-field>
-              <textarea matInput placeholder="Comment"></textarea>
+              <textarea matInput placeholder="Comment" formControlName="revComments"></textarea>
             </mat-form-field>
           </td>
         </tr>
@@ -477,7 +478,7 @@
             <!--<textarea class="form-control"
             type="text"></textarea>-->
             <mat-form-field>
-              <textarea matInput placeholder="Comment"></textarea>
+              <textarea matInput placeholder="Comment" formControlName="employeeComments"></textarea>
             </mat-form-field>
           </td>
         </tr>

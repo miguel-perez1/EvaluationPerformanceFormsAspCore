@@ -22,6 +22,8 @@ namespace EvaluationPerformanceFormsAspCore.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IUserRepository, UserRepository>();
+            services.AddTransient<IExecutiveFormRepository, ExecutiveFormRepository>();
+            services.AddTransient<IStepPayPlanFormRepository, StepPayPlanRepository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the Angular files will be served from this directory

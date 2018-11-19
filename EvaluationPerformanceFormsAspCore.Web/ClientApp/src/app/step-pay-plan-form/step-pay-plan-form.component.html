@@ -1,0 +1,55 @@
+<div class="form-container">
+  <form class="container mat-elevation-z8" [formGroup]="stepPayPlanForm" (ngSubmit)="onSubmit()">
+    <h1 class="text-center">City of San Antonio</h1>
+    <h2 class="text-center">Employee Performance Evaluation</h2>
+    <h3 class="text-center pbot">Executive Level</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Employee Name" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Department" formControlName="department">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-select placeholder="Review Type" formControlName="review">
+            <mat-option value="Planning">Planning</mat-option>
+            <mat-option value="Annual">Annual</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-6">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Employee SAP #" formControlName="sap">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="period" formControlName="period">
+          <!--<input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="period">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>-->
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Division" formControlName="division">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput placeholder="TEST" formControlName="testName"></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <button class="btn btn-primary"
+                type="submit">
+          Save
+        </button>
+        <button class="btn btn-danger"
+                type="button">
+          Delete
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

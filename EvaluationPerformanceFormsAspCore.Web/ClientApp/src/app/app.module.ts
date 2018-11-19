@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ExecutiveFormService } from './services/executive-form.service';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpService } from './services/sign-up.service';
+import { StepPayPlanService } from './services/step-pay-plan-form.service';
+import { StepPayPlanFormComponent } from './step-pay-plan-form/step-pay-plan-form.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { SignUpService } from './services/sign-up.service';
     LoginComponent,
     UserListComponent,
     ExecutiveFormComponent,
+    StepPayPlanFormComponent,
     SignUpComponent
   ],
   imports: [
@@ -40,9 +43,10 @@ import { SignUpService } from './services/sign-up.service';
       { path: 'signup', component: SignUpComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'executive-view', component: ExecutiveFormComponent },
+      { path: 'step-view', component: StepPayPlanFormComponent },
     ])
   ],
-  providers: [ExecutiveFormService, SignUpService],
+  providers: [ExecutiveFormService, SignUpService, StepPayPlanService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
