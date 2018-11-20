@@ -42,8 +42,8 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
         {
             using (IDbConnection conn = Connection)
             {
-                string sQuery = "INSERT INTO StepPayPlan(name, title, department, review, sap, period, division, testName)" +
-                               "VALUES(@name, @title, @department, @review, @sap, @period, @division, @testName)";
+                string sQuery = "INSERT INTO StepPayPlan(name, title, department, review, sap, period, division, teamwork, integrity, innovation, professionalism)" +
+                               "VALUES(@name, @title, @department, @review, @sap, @period, @division, @teamwork, @integrity, @innovation, @professionalism)";
                 conn.Open();
                 var result = await conn.ExecuteAsync(sQuery, stepPayPlanForm);
                 conn.Close();

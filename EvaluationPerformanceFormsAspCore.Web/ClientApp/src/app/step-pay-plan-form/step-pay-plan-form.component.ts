@@ -30,7 +30,10 @@ export class StepPayPlanFormComponent {
     sap: new FormControl(''),
     period: new FormControl(''),
     division: new FormControl(''),
-    testName: new FormControl('')
+    teamwork: new FormControl(''),
+    integrity: new FormControl(''),
+    innovation: new FormControl(''),
+    professionalism: new FormControl(''),
   });
 
   //onSubmit() {

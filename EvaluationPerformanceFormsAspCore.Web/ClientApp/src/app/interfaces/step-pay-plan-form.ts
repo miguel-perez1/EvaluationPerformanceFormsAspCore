@@ -6,5 +6,8 @@ export interface IStepPayPlanForm {
   sap: number;
   period: string;
   division: string;
-  testName: string;
+  teamwork: number;
+  integrity: number;
+  innovation: number;
+  professionalism: number;
 }

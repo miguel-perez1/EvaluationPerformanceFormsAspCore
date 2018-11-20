@@ -9,6 +9,10 @@
         public int sap { get; set; }
         public string period { get; set; }
         public string division { get; set; }
-        public string testName { get; set; }
+        public int teamwork { get; set; }
+        public int integrity { get; set; }
+        public int innovation { get; set; }
+        public int professionalism { get; set; }
+
     }
 }

@@ -42,8 +42,8 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
         {
             using (IDbConnection conn = Connection)
             {
-                string sQuery = "INSERT INTO ExecutiveForm(name, title, department,reviewType, sap, period, division, secTwoPercent, secTwoRating, secTwoResponsibility, secTwoSummary, teamworkRating, integRating, innovaRating, profRating, ladRating, stratRating, excellenceRating, decisionRating, pdpRating, secFiveTime, secFiveSummary, secSixSummary, revComments)" +
-                   "VALUES(@name, @title, @department, @reviewType, @sap, @period, @division, @secTwoPercent, @secTwoRating, @secTwoResponsibility, @secTwoSummary, @teamworkRating, @integRating, @innovaRating, @profRating, @ladRating, @stratRating, @excellenceRating, @decisionRating, @pdpRating, @secFiveTime, @secFiveSummary, @secSixSummary, @revComments)";
+                string sQuery = "INSERT INTO ExecutiveForm(name, title, department,reviewType, sap, period, division, secTwoPercent, secTwoRating, secTwoResponsibility, secTwoSummary, teamworkRating, integRating, innovaRating, profRating, ladRating, stratRating, excellenceRating, decisionRating, pdpRating, secFiveTime, secFiveSummary, secSixSummary, revComments, employeeComments)" +
+                   "VALUES(@name, @title, @department, @reviewType, @sap, @period, @division, @secTwoPercent, @secTwoRating, @secTwoResponsibility, @secTwoSummary, @teamworkRating, @integRating, @innovaRating, @profRating, @ladRating, @stratRating, @excellenceRating, @decisionRating, @pdpRating, @secFiveTime, @secFiveSummary, @secSixSummary, @revComments, @employeeComments)";
                 conn.Open();
                 var result = await conn.ExecuteAsync(sQuery, executiveForm);
                 conn.Close();
