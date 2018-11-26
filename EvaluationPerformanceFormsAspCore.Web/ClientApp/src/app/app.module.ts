@@ -18,6 +18,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpService } from './services/sign-up.service';
 import { StepPayPlanService } from './services/step-pay-plan-form.service';
 import { StepPayPlanFormComponent } from './step-pay-plan-form/step-pay-plan-form.component';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { StepPayPlanFormComponent } from './step-pay-plan-form/step-pay-plan-for
       { path: 'step-view', component: StepPayPlanFormComponent },
     ])
   ],
-  providers: [ExecutiveFormService, SignUpService, StepPayPlanService],
+  providers: [ExecutiveFormService, SignUpService, StepPayPlanService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
