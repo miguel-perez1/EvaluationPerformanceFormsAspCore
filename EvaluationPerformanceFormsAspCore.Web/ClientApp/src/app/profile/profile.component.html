@@ -1,12 +1,15 @@
 <div class="container">
-  <form class="login-container mat-elevation-z8" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-    <h2>Sign Up</h2>
+  <form class="login-container mat-elevation-z8" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <h2>{{ profile?.nickname }}</h2>
     <div class="example-container">
       <mat-form-field>
         <input matInput placeholder="Full Name" formControlName="name">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Title" formControlName="title">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Level" formControlName="level">
       </mat-form-field>
       <!--<mat-form-field>
         <input matInput placeholder="Department" formControlName="department">
@@ -17,8 +20,11 @@
       <mat-form-field>
         <input matInput placeholder="Division" formControlName="division">
       </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
       <div class="button-container">
-        <button mat-raised-button color="primary" type="submit">Sign Up</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
         <button mat-button color="primary">Cancel</button>
       </div>
     </div>

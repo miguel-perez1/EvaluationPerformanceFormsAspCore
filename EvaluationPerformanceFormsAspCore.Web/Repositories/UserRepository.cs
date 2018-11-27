@@ -30,7 +30,7 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
         {
             using (IDbConnection conn = Connection)
             {
-                string sQuery = "INSERT INTO User(name, title, sap, division) VALUES(@name, @title, @sap, @division)";
+                string sQuery = "INSERT INTO User(level, name, title, sap, division, email) VALUES(@level, @name, @title, @sap, @division, @email)";
                 conn.Open();
                 var result = await conn.ExecuteAsync(sQuery, user);
                 conn.Close();

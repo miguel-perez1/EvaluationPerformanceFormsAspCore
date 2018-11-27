@@ -1,20 +1,20 @@
 import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { BrowserModule, By } from "@angular/platform-browser";
-import { SignUpComponent } from './sign-up.component';
+import { ProfileComponent } from './profile.component';
 
-let component: SignUpComponent;
-let fixture: ComponentFixture<SignUpComponent>;
+let component: ProfileComponent;
+let fixture: ComponentFixture<ProfileComponent>;
 
 describe('sign-up component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ SignUpComponent ],
+            declarations: [ ProfileComponent ],
             imports: [ BrowserModule ],
             providers: [
                 { provide: ComponentFixtureAutoDetect, useValue: true }
             ]
         });
-        fixture = TestBed.createComponent(SignUpComponent);
+        fixture = TestBed.createComponent(ProfileComponent);
         component = fixture.componentInstance;
     }));
 

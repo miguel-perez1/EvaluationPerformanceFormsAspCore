@@ -14,11 +14,11 @@ import { MaterialsModule } from './materials.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ExecutiveFormService } from './services/executive-form.service';
-import { SignUpComponent } from './sign-up/sign-up.component';
-import { SignUpService } from './services/sign-up.service';
+import { ProfileService } from './services/profile.service';
 import { StepPayPlanService } from './services/step-pay-plan-form.service';
 import { StepPayPlanFormComponent } from './step-pay-plan-form/step-pay-plan-form.component';
 import { AuthService } from './services/auth.service';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { AuthService } from './services/auth.service';
     UserListComponent,
     ExecutiveFormComponent,
     StepPayPlanFormComponent,
-    SignUpComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -41,13 +41,13 @@ import { AuthService } from './services/auth.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'login', component: LoginComponent },
-      { path: 'signup', component: SignUpComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'user-list', component: UserListComponent },
       { path: 'executive-view', component: ExecutiveFormComponent },
       { path: 'step-view', component: StepPayPlanFormComponent },
     ])
   ],
-  providers: [ExecutiveFormService, SignUpService, StepPayPlanService, AuthService],
+  providers: [ExecutiveFormService, ProfileService, StepPayPlanService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

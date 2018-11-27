@@ -9,7 +9,7 @@ import 'rxjs/add/observable/of';
 
 import { IUser } from '../interfaces/user';
 @Injectable()
-export class SignUpService {
+export class ProfileService {
   private addNewUserApi: string = 'http://localhost:53473/api/SampleData/AddNewUser';
 
   constructor(private http: HttpClient) {
