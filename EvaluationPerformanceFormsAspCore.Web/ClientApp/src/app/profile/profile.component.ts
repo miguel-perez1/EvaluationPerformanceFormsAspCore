@@ -21,6 +21,8 @@ export class ProfileComponent implements OnInit{
   }
 
   ngOnInit(): void {
+    var result = this.ProfileService.getUserDetails("mgck1@aol.com");
+    console.log(result);
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
     } else {

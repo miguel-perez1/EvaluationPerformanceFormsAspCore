@@ -21,7 +21,9 @@ export class AuthService {
   constructor(public router: Router) { }
 
   public login(): void {
-    this.auth0.authorize();
+    this.auth0.authorize({
+      prompt: 'login'
+    });
   }
 
   public handleAuthentication(): void {
