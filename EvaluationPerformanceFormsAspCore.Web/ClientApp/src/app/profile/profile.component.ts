@@ -15,14 +15,13 @@ import { AuthService } from '../services/auth.service';
 export class ProfileComponent implements OnInit{
     /** sign-up ctor */
   profile: any;
+  user: IUser;
 
   constructor(private ProfileService: ProfileService, public auth: AuthService) {
-
+    this.getSavedProfile();
   }
 
   ngOnInit(): void {
-    var result = this.ProfileService.getUserDetails("mgck1@aol.com");
-    console.log(result);
     if (this.auth.userProfile) {
       this.profile = this.auth.userProfile;
     } else {
@@ -33,7 +32,6 @@ export class ProfileComponent implements OnInit{
   }
 
   errorMessage: string;
-  user: IUser;
   profileForm = new FormGroup({
     level: new FormControl(''),
     name: new FormControl(''),
@@ -56,5 +54,24 @@ export class ProfileComponent implements OnInit{
   onSaveComplete(): void {
     // Reset the form to clear the flags
     this.profileForm.reset();
+  }
+
+  getSavedProfile() {
+    this.ProfileService.getUserDetails("mgck1@aol.com")
+      .subscribe(
+        (profileData: IUser) => this.onRetrieved(profileData));
+  }
+
+  onRetrieved(prof: IUser) {
+    this.user = prof;
+    console.log(prof);
+    this.profileForm.patchValue({
+      level: this.user.level,
+      name: this.user.name,
+      title: this.user.title,
+      sap: this.user.sap,
+      division: this.user.division,
+      email: this.user.email,
+    });
   }
 }

@@ -3,6 +3,7 @@ export interface IUser {
   name: string;
   title: string;
   sap: number;
+  division: string;
   department: string;
   email: string;
 }

@@ -18,10 +18,10 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
             _userProfile = userProfile;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<User>> GetUserProfileDetails([FromRoute]string id)
+        [HttpGet("GetUserProfileDetails/{key}")]
+        public async Task<ActionResult<User>> GetUserProfileDetails(string key)
         {
-            var response = await _userProfile.GetUserProfile(id);
+            var response = await _userProfile.GetUserProfile(key);
             return Json(response);
         }
     }
