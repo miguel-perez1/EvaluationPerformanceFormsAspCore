@@ -31,7 +31,7 @@ export class AuthService {
       if (authResult && authResult.accessToken && authResult.idToken) {
         window.location.hash = '';
         this.setSession(authResult);
-        this.router.navigate(['/']);
+        this.router.navigate(['/profile']);
       } else if (err) {
         this.router.navigate(['/']);
         console.log(err);

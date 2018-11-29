@@ -1,7 +1,6 @@
 <div class="container">
   <form class="login-container mat-elevation-z8" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-    <h2>{{ profile?.nickname }}</h2>
-    <h2>{{ profile?.email }}</h2>
+    <h2>{{ user?.name }}</h2>
     <div class="example-container">
       <mat-form-field>
         <input matInput placeholder="Full Name" formControlName="name">

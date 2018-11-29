@@ -6,6 +6,7 @@ import 'rxjs/add/observable/fromEvent';
 import 'rxjs/add/observable/merge';
 import { IUser } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
+import { error } from 'util';
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
@@ -16,6 +17,7 @@ export class ProfileComponent implements OnInit{
     /** sign-up ctor */
   profile: any;
   user: IUser;
+  passThis: string;
 
   constructor(private ProfileService: ProfileService, public auth: AuthService) {
   }
@@ -26,9 +28,12 @@ export class ProfileComponent implements OnInit{
     } else {
       this.auth.getProfile((err, profile) => {
         this.profile = profile;
+        console.log(this.profile);
+        this.passThis = this.profile.email;
+        console.log("THIS IS MY PARAMETER" + this.passThis);
+        this.getSavedProfile(this.passThis);
       });
     }
-    this.getSavedProfile();
   }
 
   errorMessage: string;
@@ -56,10 +61,11 @@ export class ProfileComponent implements OnInit{
     this.profileForm.reset();
   }
 
-  getSavedProfile() {
-    this.ProfileService.getUserDetails("mgck1@aol.com")
+  getSavedProfile(passThis: string) {
+    this.ProfileService.getUserDetails(passThis)
       .subscribe(
-        (profileData: IUser) => this.onRetrieved(profileData));
+      (profileData: IUser) => this.onRetrieved(profileData),
+      (error: any) => this.errorMessage = <any>error);
   }
 
   onRetrieved(prof: IUser) {
@@ -71,7 +77,7 @@ export class ProfileComponent implements OnInit{
       title: this.user.title,
       sap: this.user.sap,
       division: this.user.division,
-      email: this.user.email,
+      email: this.profile.email,
     });
   }
 }
