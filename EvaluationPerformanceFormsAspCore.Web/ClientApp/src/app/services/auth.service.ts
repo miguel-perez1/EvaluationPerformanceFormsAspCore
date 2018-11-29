@@ -15,7 +15,7 @@ export class AuthService {
     domain: 'perez-miguel1321.auth0.com',
     responseType: 'token id_token',
     redirectUri: 'http://localhost:53473/',
-    scope: 'openid profile'
+    scope: 'openid profile email'
   });
 
   constructor(public router: Router) { }

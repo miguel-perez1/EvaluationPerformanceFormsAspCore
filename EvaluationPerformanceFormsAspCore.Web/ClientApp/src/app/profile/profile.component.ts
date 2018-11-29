@@ -18,7 +18,6 @@ export class ProfileComponent implements OnInit{
   user: IUser;
 
   constructor(private ProfileService: ProfileService, public auth: AuthService) {
-    this.getSavedProfile();
   }
 
   ngOnInit(): void {
@@ -29,6 +28,7 @@ export class ProfileComponent implements OnInit{
         this.profile = profile;
       });
     }
+    this.getSavedProfile();
   }
 
   errorMessage: string;
