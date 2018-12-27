@@ -19,21 +19,13 @@ export class ProfileComponent implements OnInit{
   user: IUser;
   passThis: string;
 
+
   constructor(private ProfileService: ProfileService, public auth: AuthService) {
+
   }
 
   ngOnInit(): void {
-    if (this.auth.userProfile) {
-      this.profile = this.auth.userProfile;
-    } else {
-      this.auth.getProfile((err, profile) => {
-        this.profile = profile;
-        console.log(this.profile);
-        this.passThis = this.profile.email;
-        console.log("THIS IS MY PARAMETER" + this.passThis);
-        this.getSavedProfile(this.passThis);
-      });
-    }
+    this.loadProfileDetails();
   }
 
   errorMessage: string;
@@ -54,6 +46,16 @@ export class ProfileComponent implements OnInit{
       () => this.onSaveComplete(),
       (error: any) => this.errorMessage = <any>error
     );
+  }
+
+  loadProfileDetails() {
+      this.auth.getProfile((err, profile) => {
+        this.profile = profile;
+        console.log("THIS IS MY PROFILE" + this.profile);
+        this.passThis = this.profile.email;
+        console.log("THIS IS MY PARAMETER" + this.passThis);
+        this.getSavedProfile(this.passThis);
+      });
   }
 
   onSaveComplete(): void {
