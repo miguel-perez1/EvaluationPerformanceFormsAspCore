@@ -12,7 +12,7 @@ import { tap, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class ProfileService {
-  private addNewUserApi: string = 'http://localhost:53473/api/SampleData/AddNewUser';
+  private addNewUserApi: string = 'http://localhost:53473/api/Profile/SaveProfile';
   private getUserDetailsApi: string = 'http://localhost:53473/api/Profile/GetUserProfileDetails';
   public user: IUser;
   constructor(private http: HttpClient) {

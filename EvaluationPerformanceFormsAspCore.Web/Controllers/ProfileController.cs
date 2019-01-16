@@ -18,6 +18,13 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
             _userProfile = userProfile;
         }
 
+        [HttpPost("[action]")]
+        public async Task<IActionResult> SaveProfile([FromBody] User user)
+        {
+            var response = await _userProfile.SaveUserProfile(user);
+            return Json(response);
+        }
+
         [HttpGet("GetUserProfileDetails/{key}")]
         public async Task<ActionResult<User>> GetUserProfileDetails(string key)
         {

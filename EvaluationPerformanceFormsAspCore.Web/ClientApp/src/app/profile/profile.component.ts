@@ -7,6 +7,7 @@ import 'rxjs/add/observable/merge';
 import { IUser } from '../interfaces/user';
 import { AuthService } from '../services/auth.service';
 import { error } from 'util';
+
 @Component({
     selector: 'app-profile',
     templateUrl: './profile.component.html',
@@ -60,7 +61,7 @@ export class ProfileComponent implements OnInit{
 
   onSaveComplete(): void {
     // Reset the form to clear the flags
-    this.profileForm.reset();
+    console.log("PROFILE DETAILS SAVED");
   }
 
   getSavedProfile(passThis: string) {

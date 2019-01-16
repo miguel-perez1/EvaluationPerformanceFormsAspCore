@@ -23,15 +23,23 @@
             <span class='glyphicon glyphicon-th-list'></span> User List
           </a>
         </li>
-        <li [routerLinkActive]='["link-active"]'>
-          <a [routerLink]='["/executive-view"]' (click)='collapse()'>
-            <span class='glyphicon glyphicon-file'></span> Executive Form
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+            Forms
+            <span class="caret"></span>
           </a>
-        </li>
-        <li [routerLinkActive]='["link-active"]'>
-          <a [routerLink]='["/step-view"]' (click)='collapse()'>
-            <span class='glyphicon glyphicon-file'></span> Step Pay Plan Form
-          </a>
+          <ul class="dropdown-menu">
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/executive-view"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-file'></span> Executive Form
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/step-view"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-file'></span> Step Pay Plan Form
+              </a>
+            </li>
+          </ul>
         </li>
         <li *ngIf="!auth.isAuthenticated()">
           <a (click)='auth.login()'>
@@ -46,7 +54,7 @@
           <ul class="dropdown-menu">
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/profile"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-user'></span> Profile Test
+                <span class='glyphicon glyphicon-user'></span> Profile
               </a>
             </li>
             <li>
