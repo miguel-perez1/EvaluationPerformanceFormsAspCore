@@ -19,6 +19,7 @@ import { StepPayPlanService } from './services/step-pay-plan-form.service';
 import { StepPayPlanFormComponent } from './step-pay-plan-form/step-pay-plan-form.component';
 import { AuthService } from './services/auth.service';
 import { ProfileComponent } from './profile/profile.component';
+import { FormListComponent } from './form-list/form-list.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ProfileComponent } from './profile/profile.component';
     HomeComponent,
     LoginComponent,
     UserListComponent,
+    FormListComponent,
     ExecutiveFormComponent,
     StepPayPlanFormComponent,
     ProfileComponent
@@ -45,6 +47,7 @@ import { ProfileComponent } from './profile/profile.component';
       { path: 'user-list', component: UserListComponent },
       { path: 'executive-view', component: ExecutiveFormComponent },
       { path: 'step-view', component: StepPayPlanFormComponent },
+      { path: 'form-list', component: FormListComponent },
     ])
   ],
   providers: [ExecutiveFormService, ProfileService, StepPayPlanService, AuthService],
