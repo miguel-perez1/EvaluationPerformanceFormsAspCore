@@ -8,6 +8,8 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
 {
     public interface IExecutiveFormRepository
     {
+
+        Task<ExecutiveForm> FindById(int searchId);
         Task<List<ExecutiveForm>> AllExecutiveForms();
         Task<int> SaveExecutiveForm(ExecutiveForm executiveForm);
     }

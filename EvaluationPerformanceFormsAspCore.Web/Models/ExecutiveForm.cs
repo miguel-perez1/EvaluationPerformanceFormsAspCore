@@ -2,6 +2,7 @@
 {
     public class ExecutiveForm
     {
+        public int id { get; set; }
         public string name { get; set; }
         public string title { get; set; }
         public string department { get; set; }

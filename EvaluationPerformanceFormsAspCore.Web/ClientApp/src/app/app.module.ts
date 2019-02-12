@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { ExecutiveFormComponent } from './executive-form/executive-form.component';
+import { ExecutiveFormDetailsComponent } from './executive-form-details/executive-form-details.component';
 import { MaterialsModule } from './materials.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +32,8 @@ import { FormListComponent } from './form-list/form-list.component';
     FormListComponent,
     ExecutiveFormComponent,
     StepPayPlanFormComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExecutiveFormDetailsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -45,9 +47,10 @@ import { FormListComponent } from './form-list/form-list.component';
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'user-list', component: UserListComponent },
-      { path: 'executive-view', component: ExecutiveFormComponent },
-      { path: 'step-view', component: StepPayPlanFormComponent },
       { path: 'form-list', component: FormListComponent },
+      { path: 'executive-details/:id', component: ExecutiveFormDetailsComponent },
+      { path: 'executive-view/:id/edit', component: ExecutiveFormComponent },
+      { path: 'step-view', component: StepPayPlanFormComponent },
     ])
   ],
   providers: [ExecutiveFormService, ProfileService, StepPayPlanService, AuthService],

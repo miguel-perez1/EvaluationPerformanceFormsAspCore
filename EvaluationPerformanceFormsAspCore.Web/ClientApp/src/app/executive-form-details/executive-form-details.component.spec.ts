@@ -1,21 +1,21 @@
 // <reference path="../../../../node_modules/@types/jasmine/index.d.ts" />
 import { TestBed, async, ComponentFixture, ComponentFixtureAutoDetect } from '@angular/core/testing';
 import { BrowserModule, By } from "@angular/platform-browser";
-import { FormListComponent } from './form-list.component';
+import { ExecutiveFormDetailsComponent } from './executive-form-details.component';
 
-let component: FormListComponent;
-let fixture: ComponentFixture<FormListComponent>;
+let component: ExecutiveFormDetailsComponent;
+let fixture: ComponentFixture<ExecutiveFormDetailsComponent>;
 
-describe('form-list component', () => {
+describe('executive-form-details component', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [ FormListComponent ],
+            declarations: [ ExecutiveFormDetailsComponent ],
             imports: [ BrowserModule ],
             providers: [
                 { provide: ComponentFixtureAutoDetect, useValue: true }
             ]
         });
-        fixture = TestBed.createComponent(FormListComponent);
+        fixture = TestBed.createComponent(ExecutiveFormDetailsComponent);
         component = fixture.componentInstance;
     }));
 

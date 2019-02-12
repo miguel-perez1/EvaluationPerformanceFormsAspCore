@@ -17,6 +17,14 @@ namespace EvaluationPerformanceFormsAspCore.Web.Controllers
         {
             _executiveFormRepository = executiveFormRepository;
         }
+
+        [HttpGet("GetById/{id}")]
+        public async Task<ActionResult<ExecutiveForm>> GetById(int id)
+        {
+            var response = await _executiveFormRepository.FindById(id);
+            return Json(response);
+        }
+
         [HttpGet("[action]")]
         public async Task<ActionResult<List<ExecutiveForm>>> GetAllExecutiveForms()
         {

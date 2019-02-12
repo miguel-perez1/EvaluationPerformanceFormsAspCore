@@ -25,7 +25,17 @@ namespace EvaluationPerformanceFormsAspCore.Web.Repositories
                 return new MySqlConnection(_config.GetConnectionString("MyConnectionString"));
             }
         }
-        
+        public async Task<ExecutiveForm> FindById(int searchId)
+        {
+            using (IDbConnection conn = Connection)
+            {
+                string sQuery = "SELECT * FROM ExecutiveForm WHERE id=@ID";
+                conn.Open();
+                var result = await conn.QueryFirstAsync<ExecutiveForm>(sQuery, new { ID = searchId} );
+                conn.Close();
+                return result;
+            }
+        }
         public async Task<List<ExecutiveForm>> AllExecutiveForms()
         {
             using (IDbConnection conn = Connection)

@@ -11,16 +11,25 @@ import 'rxjs/add/observable/of';
 
 import { IExecutiveForm } from '../interfaces/executive-form';
 import { Catcher } from '../models/catcher';
+import { tap } from 'rxjs/operators';
 
 @Injectable()
 export class ExecutiveFormService {
   private addNewExecutiveFormApi: string = 'http://localhost:53473/api/ExecutiveForm/SaveNewExecutiveForm';
+  private findByIdApi: string = 'http://localhost:53473/api/ExecutiveForm/GetById';
 
   constructor(private http: HttpClient) {
 
   }
   saveExecutiveForm(executive: IExecutiveForm): Observable<IExecutiveForm> {
     return this.http.post<IExecutiveForm>(this.addNewExecutiveFormApi, executive);
+  }
+
+  getFormById(id: number): Observable<IExecutiveForm> {
+    const url = `${this.findByIdApi}/${id}`
+    return this.http.get<IExecutiveForm>(url)
+      .pipe(
+        tap(data => console.log(JSON.stringify(data))));
   }
   //private createExecutiveForm(executive: IExecutiveForm, options: RequestOptions): Observable<IExecutiveForm> {
   //  executive.id = undefined;

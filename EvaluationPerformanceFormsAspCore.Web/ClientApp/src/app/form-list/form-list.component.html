@@ -1,1 +1,26 @@
-﻿<div style="border: 1px solid red">form-list Component</div>
+<h1>Form List</h1>
+<p *ngIf="!execFormList"><em>Loading...</em></p>
+
+<table class='table' *ngIf="execFormList">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Title</th>
+      <th>SAP</th>
+      <th>Division</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let form of execFormList">
+      <td>
+        <a [routerLink]="['/executive-details', form.id]" >
+          {{ form.name }}
+        </a>
+      </td>
+      <!--<td>{{ form.id }}</td>-->
+      <td>{{ form.title }}</td>
+      <td>{{ form.sap }}</td>
+      <td>{{ form.division }}</td>
+    </tr>
+  </tbody>
+</table>
